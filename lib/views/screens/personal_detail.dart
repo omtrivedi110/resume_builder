@@ -15,7 +15,7 @@ class _personal_detailState extends State<personal_detail> {
   bool englishcheckbox = false;
   bool hindicheckbox = false;
   bool gujaraticheckbox = false;
-  String value ="IN";
+  String value ="IND";
 
   @override
   Widget build(BuildContext context) {
