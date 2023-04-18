@@ -20,7 +20,7 @@ class _homepageState extends State<homepage> {
           "Resume Builder",
           style: titletextstyle,
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.orangeAccent,
         centerTitle: true,
       ),
       body: Column(
@@ -29,7 +29,7 @@ class _homepageState extends State<homepage> {
             width: s.width,
             height: s.height * 0.12,
             decoration: const BoxDecoration(
-                color: Colors.black,
+                color: Colors.orangeAccent,
                 borderRadius:
                 BorderRadius.vertical(bottom: Radius.circular(35))),
             child: Text(

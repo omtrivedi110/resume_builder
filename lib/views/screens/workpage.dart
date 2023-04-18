@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_builder/utils/backbutton.dart';
 import 'package:resume_builder/utils/textstyle.dart';
 import 'package:resume_builder/utils/routes_utils.dart';
 import 'package:resume_builder/utils/icons_utils.dart';
@@ -20,8 +21,9 @@ class _workpageState extends State<workpage> {
             "Resume Workspace",
             style: titletextstyle,
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.orangeAccent,
           centerTitle: true,
+          leading: Mybackicon(),
         ),
         body: Column(
           children: [
@@ -29,7 +31,7 @@ class _workpageState extends State<workpage> {
               width: s.width,
               height: s.height * 0.12,
               decoration: const BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.orangeAccent,
                   borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(35))),
               child: Text(
