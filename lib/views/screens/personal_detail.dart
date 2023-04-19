@@ -15,13 +15,11 @@ class _personal_detailState extends State<personal_detail> {
   bool englishcheckbox = false;
   bool hindicheckbox = false;
   bool gujaraticheckbox = false;
-  String value ="IND";
+  String value = "IN";
 
   @override
   Widget build(BuildContext context) {
-    Size s = MediaQuery
-        .of(context)
-        .size;
+    Size s = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         leading: Mybackicon(),
@@ -156,25 +154,32 @@ class _personal_detailState extends State<personal_detail> {
                         gujaraticheckbox = val!;
                       });
                     }),
-                // DropdownButton(
-                //   value: value,
-                //     hint: const Text("Select Country"),
-                //     onChanged: (val) {
-                //       setState(() {
-                //         value = val!;
-                //       });}, items: [
-                //         DropdownMenuItem(
-                //             value: "IN", child: menuitem(displayvalue: "India")),
-                //         DropdownMenuItem(value: "AU",
-                //             child: menuitem(displayvalue: "Australia")),
-                //         DropdownMenuItem(value: "CAN",
-                //             child: menuitem(displayvalue: "Canada")),
-                //         DropdownMenuItem(value: "USA",
-                //             child: menuitem(
-                //                 displayvalue: "United States of America")),
-                //         DropdownMenuItem(value: "UK",
-                //             child: menuitem(displayvalue: "United Kingdom")),
-                //       ],),
+                DropdownButton(
+                  value: value,
+                  hint: const Text("Select Country"),
+                  onChanged: (val) {
+                    setState(() {
+                      value = val!;
+                    });
+                  },
+                  items: [
+                    DropdownMenuItem(
+                        value: "IN", child: menuitem(displayvalue: "India")),
+                    DropdownMenuItem(
+                        value: "AU",
+                        child: menuitem(displayvalue: "Australia")),
+                    DropdownMenuItem(
+                      value: "CAN",
+                      child: menuitem(displayvalue: "Canada")),
+                    DropdownMenuItem(
+                        value: "USA",
+                        child:
+                            menuitem(displayvalue: "United States of America")),
+                    DropdownMenuItem(
+                        value: "UK",
+                        child: menuitem(displayvalue: "United Kingdom")),
+                  ],
+                ),
               ],
             ),
           ),
@@ -189,8 +194,6 @@ Widget menuitem({required String displayvalue}) {
   return Container(
     width: 10,
     padding: const EdgeInsets.all(10),
-    child: Text(
-        displayvalue
-    ),
+    child: Text(displayvalue),
   );
 }

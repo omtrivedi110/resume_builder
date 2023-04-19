@@ -45,7 +45,7 @@ class _homepageState extends State<homepage> {
             child: Column(
               children: [
                 Image.asset(
-                  icons + "open-cardboard-box.png",
+                  "${icons}open-cardboard-box.png",
                   height: 125,
                 ),
                 const SizedBox(
