@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:resume_builder/utils/backbutton.dart';
 
-import '../../utils/backbutton.dart';
 import '../../utils/textstyle.dart';
 
-class education extends StatefulWidget {
-  const education({Key? key}) : super(key: key);
+class project extends StatefulWidget {
+  const project({Key? key}) : super(key: key);
 
   @override
-  State<education> createState() => _educationState();
+  State<project> createState() => _projectState();
 }
 
-class _educationState extends State<education> {
+class _projectState extends State<project> {
   GlobalKey<FormState> formkey = GlobalKey();
-  String course = "";
-  String school = "";
-  String perc = "";
+  bool ccheckbox = false;
+  bool javacheckbox = false;
+  bool dartcheckbox = false;
+  bool htmlcheckbox = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class _educationState extends State<education> {
       appBar: AppBar(
         leading: Mybackicon(),
         title: Text(
-          "Education",
+          "Projects",
           style: titletextstyle,
         ),
         backgroundColor: Colors.orangeAccent,
@@ -48,44 +49,86 @@ class _educationState extends State<education> {
                       height: 20,
                     ),
                     Text(
-                      "Course And Degree",
+                      "Project title",
                       style: educationtitle,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding:  const EdgeInsets.only(top: 10, right: 18),
+                          padding: const EdgeInsets.only(top: 10, right: 18),
                           child: TextFormField(
                             decoration: InputDecoration(
-                              hintText: "B . Tech Information technology",
+                              hintText: "Resume Builder App",
                               hintStyle: TextStyle(color: Colors.grey.shade400),
                               border: const OutlineInputBorder(),
                             ),
                             onSaved: (val) {
-                              course = val!;
-                              print(course);
+                              // course = val!;
+                              // print(course);
                             },
                           ),
                         ),
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("School/college/institute",
-                            style: educationtitle),
+                        Text(
+                          "Technologies",
+                          style: educationtitle,
+                        ),
+                        CheckboxListTile(
+                            value: ccheckbox,
+                            controlAffinity: ListTileControlAffinity.leading,
+                            title: const Text("C Programming",style: TextStyle(color: Colors.grey),),
+                            onChanged: (val) {
+                              setState(() {
+                                ccheckbox = val!;
+                              });
+                            }),
+                        CheckboxListTile(
+                            value: javacheckbox,
+                            title: const Text("JS Development",style: TextStyle(color: Colors.grey),),
+                            controlAffinity: ListTileControlAffinity.leading,
+                            onChanged: (val) {
+                              setState(() {
+                                javacheckbox = val!;
+                              });
+                            }),
+                        CheckboxListTile(
+                            value: htmlcheckbox,
+                            title: const Text("HTML Programming",style: TextStyle(color: Colors.grey),),
+                            controlAffinity: ListTileControlAffinity.leading,
+                            onChanged: (val) {
+                              setState(() {
+                                htmlcheckbox = val!;
+                              });
+                            }),
+                        CheckboxListTile(
+                            value: dartcheckbox,
+                            title: const Text("Flutter",style: TextStyle(color: Colors.grey),),
+                            controlAffinity: ListTileControlAffinity.leading,
+                            onChanged: (val) {
+                              setState(() {
+                                dartcheckbox = val!;
+                              });
+                            }),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text("Roles", style: educationtitle),
                         Padding(
                           padding: const EdgeInsets.only(top: 10, right: 18),
                           child: Column(
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: "Bhagawan Mahavir University",
+                                  hintText: "Organised team member",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
-                                  school = val!;
+                                  // school = val!;
                                 },
                               ),
                             ],
@@ -94,21 +137,20 @@ class _educationState extends State<education> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("Perc / CGPI",
-                            style: educationtitle ),
+                        Text("Technologies", style: educationtitle),
                         Padding(
                           padding: const EdgeInsets.only(top: 10, right: 18),
                           child: Column(
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: "70 % OR 7.0 CGPI",
+                                  hintText: "Give program name you worked",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
-                                  perc = val!;
+                                  // perc = val!;
                                 },
                               ),
                             ],
@@ -117,23 +159,27 @@ class _educationState extends State<education> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("Year of Pass",
-                            style: educationtitle ),
+                        Text("Project Description", style: educationtitle),
                         Padding(
-                          padding: const EdgeInsets.only(top: 10, right: 18,bottom: 20),
+                          padding: const EdgeInsets.only(
+                              top: 10, right: 18, bottom: 20),
                           child: Column(
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: "2019",
+                                  hintText: "Enter Project Description",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
-                                  perc = val!;
+                                  // perc = val!;
                                 },
                               ),
+                              Align(
+                                  alignment: Alignment.center,
+                                  child: ElevatedButton(
+                                      onPressed: () {}, child: const Text("SAVE"))),
                             ],
                           ),
                         ),

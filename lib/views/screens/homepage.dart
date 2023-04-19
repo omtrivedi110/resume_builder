@@ -67,7 +67,8 @@ class _homepageState extends State<homepage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed(routes.workpage);
-        },
+        },tooltip: "Create Resume",
+        hoverColor: Colors.blue,
         child: const Icon(Icons.add),
       ),
     );

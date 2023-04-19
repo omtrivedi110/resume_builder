@@ -1,10 +1,14 @@
+import 'package:resume_builder/views/screens/achievement.dart';
 import 'package:resume_builder/views/screens/carrier_objective.dart';
 import 'package:resume_builder/views/screens/contact_info.dart';
+import 'package:resume_builder/views/screens/declaration.dart';
 import 'package:resume_builder/views/screens/education.dart';
 import 'package:resume_builder/views/screens/experience.dart';
 import 'package:resume_builder/views/screens/hobbies.dart';
 import 'package:resume_builder/views/screens/homepage.dart';
 import 'package:resume_builder/views/screens/personal_detail.dart';
+import 'package:resume_builder/views/screens/project.dart';
+import 'package:resume_builder/views/screens/reference.dart';
 import 'package:resume_builder/views/screens/technical_skill.dart';
 import 'package:resume_builder/views/screens/workpage.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +38,10 @@ class MyApp extends StatelessWidget {
         routes.buildoptions[4].route : (context) => const experience(),
         routes.buildoptions[5].route : (context) => const Technical_skill(),
         routes.buildoptions[6].route : (context) => const Hobbies(),
+        routes.buildoptions[7].route : (context) => const project(),
+        routes.buildoptions[8].route : (context) => const achievement(),
+        routes.buildoptions[9].route : (context) => const reference(),
+        routes.buildoptions[10].route : (context) => const declaration(),
       },
     );
   }

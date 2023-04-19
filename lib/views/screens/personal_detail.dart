@@ -11,7 +11,9 @@ class personal_detail extends StatefulWidget {
 }
 
 class _personal_detailState extends State<personal_detail> {
+  GlobalKey<FormState> formkey = GlobalKey();
   String maritstatus = "";
+  String national = "";
   bool englishcheckbox = false;
   bool hindicheckbox = false;
   bool gujaraticheckbox = false;
@@ -86,7 +88,7 @@ class _personal_detailState extends State<personal_detail> {
                   ],
                 ),
                 SizedBox(
-                  height: s.height * 0.05,
+                  height: s.height * 0.02,
                 ),
                 const Text(
                   "Marital Status",
@@ -96,7 +98,7 @@ class _personal_detailState extends State<personal_detail> {
                       color: Colors.blue),
                 ),
                 SizedBox(
-                  height: s.height * 0.01,
+                  height: s.height * 0.005,
                 ),
                 RadioListTile(
                     value: "Single",
@@ -117,7 +119,7 @@ class _personal_detailState extends State<personal_detail> {
                       });
                     }),
                 SizedBox(
-                  height: s.height * 0.05,
+                  height: s.height * 0.005,
                 ),
                 const Text(
                   "Language Known By You",
@@ -125,6 +127,9 @@ class _personal_detailState extends State<personal_detail> {
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.blue),
+                ),
+                SizedBox(
+                  height: s.height * 0.005,
                 ),
                 CheckboxListTile(
                     value: englishcheckbox,
@@ -147,39 +152,38 @@ class _personal_detailState extends State<personal_detail> {
                     }),
                 CheckboxListTile(
                     value: gujaraticheckbox,
-                    title: menuitem(displayvalue: "Select Country"),
+                    title: const Text("Gujarati"),
                     controlAffinity: ListTileControlAffinity.leading,
                     onChanged: (val) {
                       setState(() {
                         gujaraticheckbox = val!;
                       });
                     }),
-                DropdownButton(
-                  value: value,
-                  hint: const Text("Select Country"),
-                  onChanged: (val) {
-                    setState(() {
-                      value = val!;
-                    });
-                  },
-                  items: [
-                    DropdownMenuItem(
-                        value: "IN", child: menuitem(displayvalue: "India")),
-                    DropdownMenuItem(
-                        value: "AU",
-                        child: menuitem(displayvalue: "Australia")),
-                    DropdownMenuItem(
-                      value: "CAN",
-                      child: menuitem(displayvalue: "Canada")),
-                    DropdownMenuItem(
-                        value: "USA",
-                        child:
-                            menuitem(displayvalue: "United States of America")),
-                    DropdownMenuItem(
-                        value: "UK",
-                        child: menuitem(displayvalue: "United Kingdom")),
-                  ],
+                Text(
+                  "Nationality",
+                  style: educationtitle,
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, right: 5),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Indian",
+                          hintStyle: TextStyle(color: Colors.grey.shade400),
+                          border: const OutlineInputBorder(),
+                        ),
+                        onSaved: (val) {
+                          national = val!;
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                Align(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+              onPressed: () {}, child: const Text("SAVE"))),
               ],
             ),
           ),
@@ -188,12 +192,4 @@ class _personal_detailState extends State<personal_detail> {
       backgroundColor: Colors.grey,
     );
   }
-}
-
-Widget menuitem({required String displayvalue}) {
-  return Container(
-    width: 10,
-    padding: const EdgeInsets.all(10),
-    child: Text(displayvalue),
-  );
 }

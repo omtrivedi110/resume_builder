@@ -3,18 +3,17 @@ import 'package:flutter/material.dart';
 import '../../utils/backbutton.dart';
 import '../../utils/textstyle.dart';
 
-class education extends StatefulWidget {
-  const education({Key? key}) : super(key: key);
+class reference extends StatefulWidget {
+  const reference({Key? key}) : super(key: key);
 
   @override
-  State<education> createState() => _educationState();
+  State<reference> createState() => _referenceState();
 }
 
-class _educationState extends State<education> {
+class _referenceState extends State<reference> {
+
+  String refename = "";
   GlobalKey<FormState> formkey = GlobalKey();
-  String course = "";
-  String school = "";
-  String perc = "";
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class _educationState extends State<education> {
       appBar: AppBar(
         leading: Mybackicon(),
         title: Text(
-          "Education",
+          "Reference",
           style: titletextstyle,
         ),
         backgroundColor: Colors.orangeAccent,
@@ -48,7 +47,7 @@ class _educationState extends State<education> {
                       height: 20,
                     ),
                     Text(
-                      "Course And Degree",
+                      "Reference name",
                       style: educationtitle,
                     ),
                     Column(
@@ -58,20 +57,19 @@ class _educationState extends State<education> {
                           padding:  const EdgeInsets.only(top: 10, right: 18),
                           child: TextFormField(
                             decoration: InputDecoration(
-                              hintText: "B . Tech Information technology",
+                              hintText: "Om Trivedi",
                               hintStyle: TextStyle(color: Colors.grey.shade400),
                               border: const OutlineInputBorder(),
                             ),
                             onSaved: (val) {
-                              course = val!;
-                              print(course);
+                              refename = val!;
                             },
                           ),
                         ),
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("School/college/institute",
+                        Text("Designation",
                             style: educationtitle),
                         Padding(
                           padding: const EdgeInsets.only(top: 10, right: 18),
@@ -79,13 +77,13 @@ class _educationState extends State<education> {
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: "Bhagawan Mahavir University",
+                                  hintText: "IT H.O.D , ID - 2295",
                                   hintStyle:
                                   TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
-                                  school = val!;
+                                  // school = val!;
                                 },
                               ),
                             ],
@@ -94,30 +92,7 @@ class _educationState extends State<education> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("Perc / CGPI",
-                            style: educationtitle ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10, right: 18),
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: "70 % OR 7.0 CGPI",
-                                  hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
-                                  border: const OutlineInputBorder(),
-                                ),
-                                onSaved: (val) {
-                                  perc = val!;
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text("Year of Pass",
+                        Text("Organization / Instute",
                             style: educationtitle ),
                         Padding(
                           padding: const EdgeInsets.only(top: 10, right: 18,bottom: 20),
@@ -125,18 +100,19 @@ class _educationState extends State<education> {
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: "2019",
+                                  hintText: "Tencent Games Pvt. limited",
                                   hintStyle:
                                   TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
-                                  perc = val!;
+                                  // perc = val!;
                                 },
                               ),
                             ],
                           ),
                         ),
+
                       ],
                     ),
                   ],
