@@ -24,7 +24,7 @@ class _personal_detailState extends State<personal_detail> {
       appBar: AppBar(
         leading: Mybackicon(),
         title: Text(
-          "Resume Workspace",
+          "Personal Detail",
           style: titletextstyle,
         ),
         backgroundColor: Colors.orangeAccent,
@@ -147,7 +147,7 @@ class _personal_detailState extends State<personal_detail> {
                     }),
                 CheckboxListTile(
                     value: gujaraticheckbox,
-                    title: const Text("Gujarati"),
+                    title: menuitem(displayvalue: "Select Country"),
                     controlAffinity: ListTileControlAffinity.leading,
                     onChanged: (val) {
                       setState(() {

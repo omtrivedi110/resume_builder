@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/backbutton.dart';
 import '../../utils/textstyle.dart';
 
 class education extends StatefulWidget {
@@ -10,11 +11,13 @@ class education extends StatefulWidget {
 }
 
 class _educationState extends State<education> {
-
+  GlobalKey<FormState> formkey = GlobalKey();
+  String course = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Mybackicon(),
         title: Text(
           "Education",
           style: titletextstyle,
@@ -26,20 +29,35 @@ class _educationState extends State<education> {
         padding: EdgeInsets.all(20),
         child: Center(
           child: Container(
-            child: Column(
-              children: [
-                Text("Course And Degree",style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue),,),
-                TextFormField(
-                  key: ,
-                )
-              ],
-            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
             color: Colors.orangeAccent,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 20,),
+                const Text("Course And Degree",style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue),),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Form(
+                    key: formkey,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          decoration: const InputDecoration(border: OutlineInputBorder(),),
+                          onSaved: (val){
+                            course = val!;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
         ),
