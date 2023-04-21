@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
         routes.buildoptions[8].route : (context) => const achievement(),
         routes.buildoptions[9].route : (context) => const reference(),
         routes.buildoptions[10].route : (context) => const declaration(),
+
       },
     );
   }
