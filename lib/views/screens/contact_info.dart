@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_builder/utils/variables.dart';
 
 import '../../utils/backbutton.dart';
 import '../../utils/icons_utils.dart';
@@ -44,7 +45,13 @@ class _contact_infoState extends State<contact_info> {
                     child: Container(
                       alignment: Alignment.center,
                       height: s.height * 0.12,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            width: index == 0 ? 3 : 0,
+                            color: Colors.amber,
+                          ),
+                        ),
                         color: Colors.black,
                       ),
                       child: const Text(
@@ -67,7 +74,13 @@ class _contact_infoState extends State<contact_info> {
                     child: Container(
                       height: s.height * 0.12,
                       alignment: Alignment.center,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            width: index == 1 ? 3 : 0,
+                            color: Colors.amber,
+                          ),
+                        ),
                         color: Colors.black,
                       ),
                       child: const Text(
@@ -98,134 +111,190 @@ class _contact_infoState extends State<contact_info> {
                         borderRadius: BorderRadius.circular(20)),
                     child: Form(
                       key: formkey,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // Text("hello")
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Image.asset(
-                                  "${icons}user.png",
-                                  height: 20,
-                                  color: Colors.black,
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Image.asset(
+                                    "${icons}user.png",
+                                    height: 20,
+                                    color: Colors.black,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Expanded(
-                                flex: 11,
-                                child: TextFormField(
-                                  keyboardType: TextInputType.name,
-                                  textInputAction: TextInputAction.next,
-                                  decoration: const InputDecoration(
-                                      hintText: "Enter Name",
-                                      labelText: "Name",
-                                      border: UnderlineInputBorder()),
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const Expanded(child: Icon(Icons.mail)),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Expanded(
-                                flex: 11,
-                                child: TextFormField(
-                                  textInputAction: TextInputAction.next,
-                                  keyboardType: TextInputType.emailAddress,
-                                  decoration: const InputDecoration(
-                                      hintText: "Enter Mail",
-                                      labelText: "Mail",
-                                      border: UnderlineInputBorder()),
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const Expanded(child: Icon(Icons.call)),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Expanded(
-                                flex: 11,
-                                child: TextFormField(
-                                  maxLength: 10,
-                                  textInputAction: TextInputAction.next,
-                                  keyboardType: TextInputType.phone,
-                                  decoration: const InputDecoration(
-                                      hintText: "Enter Phone Number",
-                                      labelText: "Phone",
-                                      prefixText: "+91",
-                                      border: UnderlineInputBorder()),
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const Expanded(child: Icon(Icons.location_pin)),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Expanded(
-                                flex: 11,
-                                child: TextFormField(
-                                  textInputAction: TextInputAction.next,
-                                  decoration: const InputDecoration(
-                                      hintText: "Enter Address",
-                                      border: UnderlineInputBorder()),
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const Expanded(
-                                child: SizedBox(
+                                const SizedBox(
                                   width: 8,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Expanded(
-                                flex: 11,
-                                child: TextFormField(
-                                  decoration: const InputDecoration(
-                                      hintText: "Address Line 1",
-                                      border: UnderlineInputBorder()),
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              const Expanded(
-                                child: SizedBox(
+                                Expanded(
+                                  flex: 11,
+                                  child: TextFormField(
+                                    keyboardType: TextInputType.name,
+                                    textInputAction: TextInputAction.next,
+                                    decoration: const InputDecoration(
+                                        hintText: "Enter Name",
+                                        labelText: "Name",
+                                        border: UnderlineInputBorder()),
+                                    onSaved: (val) {
+                                      Myvariable.name = val;
+                                    },
+                                    validator: (val) {
+                                      if (val!.isEmpty) {
+                                        return "Enter Your Name";
+                                      } else {
+                                        return null;
+                                      }
+                                    },
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const Expanded(child: Icon(Icons.mail)),
+                                const SizedBox(
                                   width: 8,
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Expanded(
-                                flex: 11,
-                                child: TextFormField(
-                                  decoration: const InputDecoration(
-                                      hintText: "Address Line 2",
-                                      border: UnderlineInputBorder()),
+                                Expanded(
+                                  flex: 11,
+                                  child: TextFormField(
+                                    textInputAction: TextInputAction.next,
+                                    keyboardType: TextInputType.emailAddress,
+                                    decoration: const InputDecoration(
+                                        hintText: "Enter Mail",
+                                        labelText: "Mail",
+                                        border: UnderlineInputBorder()),
+                                    onSaved: (val) {
+                                      Myvariable.mail = val;
+                                    },
+                                    validator: (val) {
+                                      if (val!.isEmpty) {
+                                        return "Enter Mail";
+                                      } else {
+                                        return null;
+                                      }
+                                    },
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const Expanded(child: Icon(Icons.call)),
+                                const SizedBox(
+                                  width: 8,
                                 ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 20,),
-                        ],
+                                Expanded(
+                                  flex: 11,
+                                  child: TextFormField(
+                                    maxLength: 10,
+                                    textInputAction: TextInputAction.next,
+                                    keyboardType: TextInputType.phone,
+                                    decoration: const InputDecoration(
+                                        hintText: "Enter Phone Number",
+                                        labelText: "Phone",
+                                        prefixText: "+91",
+                                        border: UnderlineInputBorder()),
+                                    onSaved: (val) {
+                                      Myvariable.phoneno = int.parse(val!);
+                                    },
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const Expanded(child: Icon(Icons.location_pin)),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                Expanded(
+                                  flex: 11,
+                                  child: TextFormField(
+                                    textInputAction: TextInputAction.next,
+                                    decoration: const InputDecoration(
+                                        hintText: "Enter Address",
+                                        border: UnderlineInputBorder()),
+                                    onSaved: (val) {
+                                      Myvariable.a1 = val;
+                                    },
+                                    validator: (val) {
+                                      if (val!.isEmpty) {
+                                        return "Enter Address";
+                                      } else {
+                                        return null;
+                                      }
+                                    },
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const Expanded(
+                                  child: SizedBox(
+                                    width: 8,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                Expanded(
+                                  flex: 11,
+                                  child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        hintText: "Address Line 1",
+                                        border: UnderlineInputBorder()),
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const Expanded(
+                                  child: SizedBox(
+                                    width: 8,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                Expanded(
+                                  flex: 11,
+                                  child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        hintText: "Address Line 2",
+                                        border: UnderlineInputBorder()),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                ElevatedButton(
+                                    onPressed: () {
+                                      formkey.currentState!.validate();
+                                      formkey.currentState!.save();
+                                    },
+                                    child: Text("Save")),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                ElevatedButton(
+                                    onPressed: () {
+                                      formkey.currentState!.validate();
+                                    },
+                                    child: Text("Save"))
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

@@ -4,6 +4,7 @@ import 'package:resume_builder/utils/backbutton.dart';
 import 'package:resume_builder/utils/textstyle.dart';
 import 'package:resume_builder/utils/routes_utils.dart';
 import 'package:resume_builder/utils/icons_utils.dart';
+import 'package:resume_builder/utils/variables.dart';
 
 class workpage extends StatefulWidget {
   const workpage({Key? key}) : super(key: key);
@@ -34,9 +35,9 @@ class _workpageState extends State<workpage> {
               decoration: const BoxDecoration(
                   color: Colors.black,
                   borderRadius:
-                  BorderRadius.vertical(bottom: Radius.circular(35))),
+                      BorderRadius.vertical(bottom: Radius.circular(35))),
               child: Text(
-                "\n Build Options",
+                "\n Build Options ${Myvariable.name}",
                 style: titletextstyle,
                 textAlign: TextAlign.center,
               ),
@@ -47,33 +48,34 @@ class _workpageState extends State<workpage> {
                 child: Column(
                   children: routes.buildoptions
                       .map((e) => Container(
-                    padding: const EdgeInsets.all(4.5),
-                    child: Row(
-                      children: [
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Image.asset(
-                          e.icon,
-                          height: 40,
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        Text(
-                          e.name,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        ),
-                        const Spacer(),
-                        IconButton(
-                            onPressed: () {
-                              Navigator.of(context).pushNamed(e.route);
-                            },
-                            icon: const Icon(Icons.arrow_forward_ios)),
-                      ],
-                    ),
-                  ))
+                            padding: const EdgeInsets.all(4.5),
+                            child: Row(
+                              children: [
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Image.asset(
+                                  e.icon,
+                                  height: 40,
+                                ),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                Text(
+                                  e.name,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
+                                ),
+                                const Spacer(),
+                                IconButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pushNamed(e.route);
+                                    },
+                                    icon: const Icon(Icons.arrow_forward_ios)),
+                              ],
+                            ),
+                          ))
                       .toList(),
                 ),
               ),
