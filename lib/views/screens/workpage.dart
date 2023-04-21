@@ -37,7 +37,7 @@ class _workpageState extends State<workpage> {
                   borderRadius:
                       BorderRadius.vertical(bottom: Radius.circular(35))),
               child: Text(
-                "\n Build Options ${Myvariable.name}",
+                "\n Build Options",
                 style: titletextstyle,
                 textAlign: TextAlign.center,
               ),

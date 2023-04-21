@@ -15,7 +15,6 @@ class contact_info extends StatefulWidget {
 class _contact_infoState extends State<contact_info> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   int index = 0;
-  GlobalKey namekey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -197,6 +196,15 @@ class _contact_infoState extends State<contact_info> {
                                         labelText: "Phone",
                                         prefixText: "+91",
                                         border: UnderlineInputBorder()),
+                                    validator: (val) {
+                                      if (val!.isEmpty) {
+                                        return "Enter Phone Number";
+                                      } else if (val!.length < 10) {
+                                        return "Invalid Number";
+                                      } else {
+                                        return null;
+                                      }
+                                    },
                                     onSaved: (val) {
                                       Myvariable.phoneno = int.parse(val!);
                                     },
@@ -271,23 +279,35 @@ class _contact_infoState extends State<contact_info> {
                                 ),
                               ],
                             ),
-                            Row(
-                              children: [
-                                ElevatedButton(
-                                    onPressed: () {
-                                      formkey.currentState!.validate();
-                                      formkey.currentState!.save();
-                                    },
-                                    child: Text("Save")),
-                              ],
+                            const SizedBox(
+                              height: 20,
                             ),
-                            Row(
+                            Column(
                               children: [
-                                ElevatedButton(
-                                    onPressed: () {
-                                      formkey.currentState!.validate();
-                                    },
-                                    child: Text("Save"))
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          formkey.currentState!.validate();
+                                          formkey.currentState!.save();
+                                        },
+                                        child: const Text("Save")),
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            Myvariable.name = Myvariable.a1 =
+                                                Myvariable.mail = Myvariable
+                                                    .a2 = Myvariable
+                                                        .a3 =
+                                                    Myvariable.phoneno = null;
+                                            formkey.currentState!.reset();
+                                          });
+                                        },
+                                        child: const Text("Reset")),
+                                  ],
+                                ),
                               ],
                             ),
                             const SizedBox(
