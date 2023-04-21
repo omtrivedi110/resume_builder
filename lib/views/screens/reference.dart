@@ -11,7 +11,6 @@ class reference extends StatefulWidget {
 }
 
 class _referenceState extends State<reference> {
-
   String refename = "";
   GlobalKey<FormState> formkey = GlobalKey();
 
@@ -54,9 +53,10 @@ class _referenceState extends State<reference> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding:  const EdgeInsets.only(top: 10, right: 18),
+                          padding: const EdgeInsets.only(top: 10, right: 18),
                           child: TextFormField(
                             decoration: InputDecoration(
+                              labelText: "Name",
                               hintText: "Om Trivedi",
                               hintStyle: TextStyle(color: Colors.grey.shade400),
                               border: const OutlineInputBorder(),
@@ -69,17 +69,17 @@ class _referenceState extends State<reference> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("Designation",
-                            style: educationtitle),
+                        Text("Designation", style: educationtitle),
                         Padding(
                           padding: const EdgeInsets.only(top: 10, right: 18),
                           child: Column(
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: "IT H.O.D , ID - 2295",
+                                  labelText: "Designation",
+                                  hintText: "H.R. , ID - 2295",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
@@ -92,17 +92,18 @@ class _referenceState extends State<reference> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("Organization / Instute",
-                            style: educationtitle ),
+                        Text("Organization / Institute", style: educationtitle),
                         Padding(
-                          padding: const EdgeInsets.only(top: 10, right: 18,bottom: 20),
+                          padding: const EdgeInsets.only(
+                              top: 10, right: 18, bottom: 20),
                           child: Column(
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
+                                  labelText: "Institute",
                                   hintText: "Tencent Games Pvt. limited",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
