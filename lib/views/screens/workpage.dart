@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_builder/utils/backbutton.dart';
 import 'package:resume_builder/utils/textstyle.dart';
@@ -21,7 +22,7 @@ class _workpageState extends State<workpage> {
             "Resume Workspace",
             style: titletextstyle,
           ),
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: Colors.black,
           centerTitle: true,
           leading: Mybackicon(),
         ),
@@ -31,7 +32,7 @@ class _workpageState extends State<workpage> {
               width: s.width,
               height: s.height * 0.12,
               decoration: const BoxDecoration(
-                  color: Colors.orangeAccent,
+                  color: Colors.black,
                   borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(35))),
               child: Text(
@@ -43,7 +44,6 @@ class _workpageState extends State<workpage> {
             Padding(
               padding: const EdgeInsets.all(20),
               child: SingleChildScrollView(
-                // scrollDirection: Axis.vertical,
                 child: Column(
                   children: routes.buildoptions
                       .map((e) => Container(

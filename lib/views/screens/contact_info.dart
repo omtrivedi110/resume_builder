@@ -26,7 +26,7 @@ class _contact_infoState extends State<contact_info> {
           "Contact Info",
           style: titletextstyle,
         ),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.black,
         centerTitle: true,
       ),
       body: Column(
@@ -44,10 +44,10 @@ class _contact_infoState extends State<contact_info> {
                     child: Container(
                       alignment: Alignment.center,
                       height: s.height * 0.12,
-                      decoration: BoxDecoration(
-                        color: Colors.orangeAccent,
+                      decoration: const BoxDecoration(
+                        color: Colors.black,
                       ),
-                      child: Text(
+                      child: const Text(
                         "Contact Detail",
                         style: TextStyle(
                             fontSize: 20,
@@ -67,10 +67,10 @@ class _contact_infoState extends State<contact_info> {
                     child: Container(
                       height: s.height * 0.12,
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.orangeAccent,
+                      decoration: const BoxDecoration(
+                        color: Colors.black,
                       ),
-                      child: Text(
+                      child: const Text(
                         "Profile Photo",
                         style: TextStyle(
                             fontSize: 20,
@@ -99,7 +99,7 @@ class _contact_infoState extends State<contact_info> {
                     child: Form(
                       key: formkey,
                       child: Column(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           // Text("hello")
                           Row(
@@ -186,19 +186,17 @@ class _contact_infoState extends State<contact_info> {
                           ),
                           Row(
                             children: [
-                              Expanded(
+                              const Expanded(
                                 child: SizedBox(
                                   width: 8,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8,
                               ),
                               Expanded(
                                 flex: 11,
                                 child: TextFormField(
-                                  // key: formkey,
-                                  // key: namekey,
                                   decoration: const InputDecoration(
                                       hintText: "Address Line 1",
                                       border: UnderlineInputBorder()),
@@ -208,26 +206,25 @@ class _contact_infoState extends State<contact_info> {
                           ),
                           Row(
                             children: [
-                              Expanded(
+                              const Expanded(
                                 child: SizedBox(
                                   width: 8,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8,
                               ),
                               Expanded(
                                 flex: 11,
                                 child: TextFormField(
-                                  // key: formkey,
-                                  // key: namekey,
                                   decoration: const InputDecoration(
                                       hintText: "Address Line 2",
                                       border: UnderlineInputBorder()),
                                 ),
-                              )
+                              ),
                             ],
                           ),
+                          const SizedBox(height: 20,),
                         ],
                       ),
                     ),
