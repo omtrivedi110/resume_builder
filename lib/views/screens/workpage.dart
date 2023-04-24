@@ -25,6 +25,17 @@ class _workpageState extends State<workpage> {
           ),
           backgroundColor: Colors.black,
           centerTitle: true,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed("pdf_page");
+                },
+                icon: Icon(
+                  Icons.picture_as_pdf_rounded,
+                  color: Colors.white,
+                  size: 30,
+                ))
+          ],
           leading: Mybackicon(),
         ),
         body: Column(

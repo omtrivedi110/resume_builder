@@ -4,6 +4,7 @@ import 'package:resume_builder/views/screens/contact_info.dart';
 import 'package:resume_builder/views/screens/declaration.dart';
 import 'package:resume_builder/views/screens/education.dart';
 import 'package:resume_builder/views/screens/experience.dart';
+import 'package:resume_builder/views/screens/finalpdf.dart';
 import 'package:resume_builder/views/screens/hobbies.dart';
 import 'package:resume_builder/views/screens/homepage.dart';
 import 'package:resume_builder/views/screens/personal_detail.dart';
@@ -29,20 +30,20 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        routes.home : (context) => const homepage(),
-        routes.workpage : (context) => const workpage(),
-        routes.buildoptions[0].route : (context) => const contact_info(),
-        routes.buildoptions[1].route : (context) => const carrier_objective(),
-        routes.buildoptions[2].route : (context) => const personal_detail(),
-        routes.buildoptions[3].route : (context) => const education(),
-        routes.buildoptions[4].route : (context) => const experience(),
-        routes.buildoptions[5].route : (context) => const Technical_skill(),
-        routes.buildoptions[6].route : (context) => const Hobbies(),
-        routes.buildoptions[7].route : (context) => const project(),
-        routes.buildoptions[8].route : (context) => const achievement(),
-        routes.buildoptions[9].route : (context) => const reference(),
-        routes.buildoptions[10].route : (context) => const declaration(),
-
+        routes.home: (context) => const homepage(),
+        routes.workpage: (context) => const workpage(),
+        routes.buildoptions[0].route: (context) => const contact_info(),
+        routes.buildoptions[1].route: (context) => const carrier_objective(),
+        routes.buildoptions[2].route: (context) => const personal_detail(),
+        routes.buildoptions[3].route: (context) => const education(),
+        routes.buildoptions[4].route: (context) => const experience(),
+        routes.buildoptions[5].route: (context) => const Technical_skill(),
+        routes.buildoptions[6].route: (context) => const Hobbies(),
+        routes.buildoptions[7].route: (context) => const project(),
+        routes.buildoptions[8].route: (context) => const achievement(),
+        routes.buildoptions[9].route: (context) => const reference(),
+        routes.buildoptions[10].route: (context) => const declaration(),
+        "pdf_page": (context) => const pdfpage(),
       },
     );
   }
