@@ -1,6 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:resume_builder/utils/variables.dart';
-
+import 'package:image_picker/image_picker.dart';
 import '../../utils/backbutton.dart';
 import '../../utils/icons_utils.dart';
 import '../../utils/textstyle.dart';
@@ -15,6 +17,7 @@ class contact_info extends StatefulWidget {
 class _contact_infoState extends State<contact_info> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   int index = 0;
+  ImagePicker picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
@@ -318,10 +321,76 @@ class _contact_infoState extends State<contact_info> {
                       ),
                     ),
                   ),
-                )
+                ),
+                Container(
+                  height: 250,
+                  color: Colors.white,
+                  alignment: Alignment.center,
+                  child: Stack(
+                    alignment: Alignment.bottomRight,
+                    children: [
+                      CircleAvatar(
+                        radius: 50,
+                        foregroundImage: (Myvariable.image != null)
+                            ? FileImage(Myvariable.image!)
+                            : null,
+                        child: const Text("ADD"),
+                      ),
+                      FloatingActionButton(
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                    title: const Text("Select the Method..."),
+                                    actions: [
+                                      TextButton.icon(
+                                        onPressed: () async {
+                                          Navigator.of(context).pop();
+
+                                          XFile? img = await picker.pickImage(
+                                              source: ImageSource.camera);
+
+                                          if (img != null) {
+                                            setState(() {
+                                              Myvariable.image = File(img.path);
+                                            });
+                                          }
+                                          ;
+                                        },
+                                        label: const Text("Camera"),
+                                        icon: const Icon(Icons.camera_alt),
+                                      ),
+                                      TextButton.icon(
+                                        onPressed: () async {
+                                          Navigator.of(context).pop();
+
+                                          XFile? img = await picker.pickImage(
+                                              source: ImageSource.gallery);
+
+                                          if (img != null) {
+                                            setState(() {
+                                              Myvariable.image = File(img.path);
+                                            });
+                                          }
+                                        },
+                                        label: const Text("Gallery"),
+                                        icon: const Icon(Icons.image),
+                                      ),
+                                    ],
+                                  ));
+                        },
+                        mini: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: const Icon(Icons.camera),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
       backgroundColor: Colors.grey,

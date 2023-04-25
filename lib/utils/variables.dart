@@ -9,6 +9,7 @@ class Myvariable {
   static int? phoneno;
   static String? carrier_obj;
   static List<String> skill = [];
+  static List<String> achievement = [];
 
   static File? image;
 }
