@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:resume_builder/utils/variables.dart';
 import '../../utils/backbutton.dart';
 import '../../utils/textstyle.dart';
 import 'package:pdf/pdf.dart';
@@ -21,23 +23,45 @@ class _pdfpageState extends State<pdfpage> {
       pw.Page(
         margin: pw.EdgeInsets.zero,
         build: (pw.Context Context) => pw.Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: pw.Row(
-              children: [
-                pw.Expanded(
-                  flex: 1,
-                  child: pw.Column(
-                    children: [pw.Container(color: PdfColors.red)],
-                  ),
+          height: double.infinity,
+          width: double.infinity,
+          child: pw.Row(
+            children: [
+              pw.Expanded(
+                flex: 1,
+                child: pw.Column(
+                  children: [
+                    pw.Container(
+                      height: 150,
+                      decoration: const pw.BoxDecoration(
+                          shape: pw.BoxShape.circle, color: PdfColors.red),
+                    ),
+                    pw.Container(
+                        height: 100,
+                        alignment: pw.Alignment.center,
+                        width: double.infinity,
+                        decoration: pw.BoxDecoration(
+                            color: PdfColors.yellow,
+                            borderRadius: pw.BorderRadius.circular(15)),
+                        child: pw.Text("${Myvariable.name}",
+                            style: pw.TextStyle(
+                              fontSize: 18,
+                              color: PdfColors.black,
+                            )))
+                  ],
                 ),
-                pw.Expanded(
-                    flex: 2,
-                    child: pw.Column(
-                      children: [pw.Container(color: PdfColors.black)],
-                    ))
-              ],
-            )),
+              ),
+              pw.Expanded(
+                flex: 2,
+                child: pw.Column(
+                  children: [
+                    pw.Container(height: 40, width: 40, color: PdfColors.black)
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
