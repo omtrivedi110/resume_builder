@@ -8,6 +8,7 @@ class Myvariable {
   static String? a3;
   static int? phoneno;
   static String? carrier_obj;
+  static List<String> skill = [];
 
   static File? image;
 }

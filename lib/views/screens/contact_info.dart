@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:resume_builder/utils/variables.dart';
 
 import '../../utils/backbutton.dart';
@@ -16,7 +13,6 @@ class contact_info extends StatefulWidget {
 }
 
 class _contact_infoState extends State<contact_info> {
-  ImagePicker picker = ImagePicker();
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   int index = 0;
 
@@ -322,69 +318,7 @@ class _contact_infoState extends State<contact_info> {
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Container(
-                    height: 300,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white,
-                    ),
-                    alignment: Alignment.center,
-                    child: Stack(
-                      alignment: Alignment.bottomRight,
-                      children: [
-                        CircleAvatar(
-                          radius: 80,
-                          child: Text("Add Photo"),
-                          foregroundImage: (Myvariable.image != null)
-                              ? FileImage(Myvariable.image!)
-                              : null,
-                        ),
-                        FloatingActionButton(
-                          onPressed: () {
-                            showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                      title: const Text("Select Method !!!"),
-                                      actions: [
-                                        TextButton(
-                                            onPressed: () async {
-                                              // Navigator.of(context).pop();
-                                              XFile? img =
-                                                  await picker.pickImage(
-                                                      source:
-                                                          ImageSource.camera);
-                                              if (img != null) {
-                                                Myvariable.image =
-                                                    File(img!.path);
-                                              }
-                                            },
-                                            child: const Text("Camera")),
-                                        TextButton(
-                                            onPressed: () async {
-                                              // Navigator.of(context).pop();
-                                              XFile? img =
-                                                  await picker.pickImage(
-                                                      source:
-                                                          ImageSource.gallery);
-                                              if (img != null) {
-                                                Myvariable.image =
-                                                    File(img!.path);
-                                              }
-                                            },
-                                            child: const Text("Gallery"))
-                                      ],
-                                    ));
-                          },
-                          mini: true,
-                          child: const Icon(Icons.camera),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                )
               ],
             ),
           )
