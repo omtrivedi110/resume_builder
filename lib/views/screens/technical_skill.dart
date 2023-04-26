@@ -99,17 +99,7 @@ GlobalKey<FormState> formkey = GlobalKey<FormState>();
                         }, icon: const Icon(Icons.delete_forever),)
                       ],
                     ),).toList(),
-                    // Row(
-                    //   children: [
-                    //     Expanded(
-                    //       child: TextFormField(
-                    //         decoration: const InputDecoration(hintText: "C Programming , Web Technical",),
-                    //         onChanged: (val){},
-                    //       ),
-                    //     ),
-                    //     IconButton(onPressed: (){}, icon: const Icon(Icons.delete_forever),)
-                    //   ],
-                    // ),
+
                     const SizedBox(height: 20,),
                     SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () {
                       setState(() {

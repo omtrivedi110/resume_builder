@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -33,8 +35,9 @@ class _pdfpageState extends State<pdfpage> {
                   children: [
                     pw.Container(
                       height: 150,
-                      decoration: const pw.BoxDecoration(
-                          shape: pw.BoxShape.circle, color: PdfColors.red),
+                      width: 150,
+                      decoration: pw.BoxDecoration(
+                          shape: pw.BoxShape.circle, image: pw.DecorationImage(image: pw.MemoryImage(File(Myvariable.image!.path).readAsBytesSync()),),),
                     ),
                     pw.Container(
                         height: 100,
@@ -44,7 +47,7 @@ class _pdfpageState extends State<pdfpage> {
                             color: PdfColors.yellow,
                             borderRadius: pw.BorderRadius.circular(15)),
                         child: pw.Text("${Myvariable.name}",
-                            style: pw.TextStyle(
+                            style: const pw.TextStyle(
                               fontSize: 18,
                               color: PdfColors.black,
                             )))
@@ -55,7 +58,7 @@ class _pdfpageState extends State<pdfpage> {
                 flex: 2,
                 child: pw.Column(
                   children: [
-                    pw.Container(height: 40, width: 40, color: PdfColors.black)
+                    pw.Container(height: 40, width: 40, color: PdfColors.black,)
                   ],
                 ),
               )

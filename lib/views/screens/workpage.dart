@@ -30,7 +30,7 @@ class _workpageState extends State<workpage> {
                 onPressed: () {
                   Navigator.of(context).pushNamed("pdf_page");
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.picture_as_pdf_rounded,
                   color: Colors.white,
                   size: 30,
@@ -42,7 +42,7 @@ class _workpageState extends State<workpage> {
           children: [
             Container(
               width: s.width,
-              height: s.height * 0.12,
+              height: s.height * 0.10,
               decoration: const BoxDecoration(
                   color: Colors.black,
                   borderRadius:
@@ -54,8 +54,10 @@ class _workpageState extends State<workpage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: routes.buildoptions
                       .map((e) => Container(
@@ -67,7 +69,7 @@ class _workpageState extends State<workpage> {
                                 ),
                                 Image.asset(
                                   e.icon,
-                                  height: 40,
+                                  height: 45,
                                 ),
                                 const SizedBox(
                                   width: 20,
@@ -76,7 +78,7 @@ class _workpageState extends State<workpage> {
                                   e.name,
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18),
+                                      fontSize: 25,),
                                 ),
                                 const Spacer(),
                                 IconButton(
