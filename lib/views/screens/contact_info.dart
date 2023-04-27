@@ -330,7 +330,7 @@ class _contact_infoState extends State<contact_info> {
                     alignment: Alignment.bottomRight,
                     children: [
                       CircleAvatar(
-                        radius: 50,
+                        radius: 70,
                         foregroundImage: (Myvariable.image != null)
                             ? FileImage(Myvariable.image!)
                             : null,

@@ -78,7 +78,7 @@ class _workpageState extends State<workpage> {
                                   e.name,
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 25,),
+                                      fontSize: 20,),
                                 ),
                                 const Spacer(),
                                 IconButton(

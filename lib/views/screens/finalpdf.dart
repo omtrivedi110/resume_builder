@@ -48,7 +48,7 @@ class _pdfpageState extends State<pdfpage> {
                             borderRadius: pw.BorderRadius.circular(15)),
                         child: pw.Text("${Myvariable.name}",
                             style: const pw.TextStyle(
-                              fontSize: 18,
+                              fontSize: 32,
                               color: PdfColors.black,
                             )))
                   ],
@@ -58,10 +58,10 @@ class _pdfpageState extends State<pdfpage> {
                 flex: 2,
                 child: pw.Column(
                   children: [
-                    pw.Container(height: 40, width: 40, color: PdfColors.black,)
+
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
