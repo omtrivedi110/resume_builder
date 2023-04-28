@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
+
 class Myvariable {
   static String? name;
   static String? mail;
@@ -9,6 +11,9 @@ class Myvariable {
   static int? phoneno;
   static String? carrier_obj;
   static List<String> skill = [];
+  static List<String> hobby = [];
+  static List<TextEditingController> skillcontroller = [];
+  static List<TextEditingController> hobbycontroller = [];
   static List<String> achievement = [];
 
   static File? image;

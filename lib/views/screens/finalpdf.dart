@@ -1,6 +1,3 @@
-import 'dart:typed_data';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:resume_builder/utils/variables.dart';
@@ -37,7 +34,12 @@ class _pdfpageState extends State<pdfpage> {
                       height: 150,
                       width: 150,
                       decoration: pw.BoxDecoration(
-                          shape: pw.BoxShape.circle, image: pw.DecorationImage(image: pw.MemoryImage(File(Myvariable.image!.path).readAsBytesSync()),),),
+                        shape: pw.BoxShape.circle,
+                        image: pw.DecorationImage(
+                          image: pw.MemoryImage(
+                              File(Myvariable.image!.path).readAsBytesSync()),
+                        ),
+                      ),
                     ),
                     pw.Container(
                         height: 100,
@@ -57,9 +59,7 @@ class _pdfpageState extends State<pdfpage> {
               pw.Expanded(
                 flex: 2,
                 child: pw.Column(
-                  children: [
-
-                  ],
+                  children: [],
                 ),
               ),
             ],

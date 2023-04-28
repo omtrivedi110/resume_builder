@@ -11,7 +11,17 @@ class Technical_skill extends StatefulWidget {
 }
 
 class _Technical_skillState extends State<Technical_skill> {
-GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    if (Myvariable.skillcontroller.isEmpty) {
+      Myvariable.skillcontroller.add(TextEditingController());
+      Myvariable.skillcontroller.add(TextEditingController());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
@@ -22,23 +32,25 @@ GlobalKey<FormState> formkey = GlobalKey<FormState>();
         backgroundColor: Colors.black,
       ),
       body: Column(children: [
-      Container(
-      height: s.height * 0.08,
-        width: s.width,
-        alignment: const Alignment(0, -1.45),
-        decoration: const BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(30),
-            bottomRight: Radius.circular(30),
+        Container(
+          height: s.height * 0.08,
+          width: s.width,
+          alignment: const Alignment(0, -1.45),
+          decoration: const BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+          ),
+          child: Text(
+            "Technical skill",
+            style: titletextstyle,
           ),
         ),
-        child: Text(
-          "Technical skill",
-          style: titletextstyle,
+        const SizedBox(
+          height: 30,
         ),
-      ),
-        const SizedBox(height: 30,),
         Form(
           key: formkey,
           child: Padding(
@@ -50,72 +62,62 @@ GlobalKey<FormState> formkey = GlobalKey<FormState>();
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("Enter your skill",style: educationtitle,),
-                    const SizedBox(height: 10,),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            decoration: const InputDecoration(hintText: "C Programming , Web Technical",),
-                            onChanged: (val){},
-                          ),
-                        ),
-                        IconButton(onPressed: (){
-                          setState(() {
-                            Myvariable.skill.remove("");
-                          });
-                        }, icon: const Icon(Icons.delete_forever),)
-                      ],
+                    Text(
+                      "Enter your skill",
+                      style: educationtitle,
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            decoration: const InputDecoration(hintText: "C Programming , Web Technical",),
-                            onChanged: (val){
-
-                            },
-                          ),
-                        ),
-                        IconButton(onPressed: (){
-                          setState(() {
-                            Myvariable.skill.remove("");
-                          });
-                        }, icon: const Icon(Icons.delete_forever),)
-                      ],
+                    const SizedBox(
+                      height: 10,
                     ),
-                    ...Myvariable.skill.map((e) => Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            decoration: const InputDecoration(hintText: "C Programming , Web Technical",),
-                            onChanged: (val){},
-                          ),
-                        ),
-                        IconButton(onPressed: (){
+                    ...List.generate(Myvariable.skillcontroller.length,
+                        (index) => Myskilltile(index: index)),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
                           setState(() {
-                            Myvariable.skill.remove("");
+                            Myvariable.skillcontroller
+                                .add(TextEditingController());
                           });
-                        }, icon: const Icon(Icons.delete_forever),)
-                      ],
-                    ),).toList(),
-
-                    const SizedBox(height: 20,),
-                    SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () {
-                      setState(() {
-                        Myvariable.skill.add("");
-                      });
-                    },
-                    child: const Icon(Icons.add),),)
+                        },
+                        child: const Icon(Icons.add),
+                      ),
+                    )
                   ],
                 ),
               ),
             ),
           ),
         )
-      ]
-      ),
+      ]),
       backgroundColor: Colors.grey,
+    );
+  }
+
+  Widget Myskilltile({required int index}) {
+    return Row(
+      children: [
+        Expanded(
+          child: TextFormField(
+            controller: Myvariable.skillcontroller[index],
+            decoration: const InputDecoration(
+              hintText: "C Programming , Web Technical",
+            ),
+            onChanged: (val) {},
+          ),
+        ),
+        IconButton(
+          onPressed: () {
+            setState(() {
+              Myvariable.skillcontroller.removeAt(index);
+            });
+          },
+          icon: const Icon(Icons.delete_forever),
+        )
+      ],
     );
   }
 }
