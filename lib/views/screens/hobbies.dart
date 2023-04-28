@@ -70,8 +70,10 @@ class _HobbiesState extends State<Hobbies> {
                     const SizedBox(
                       height: 10,
                     ),
-                    ...List.generate(Myvariable.hobbycontroller.length,
-                        (index) => Myskilltile(index: index)),
+                    ...List.generate(
+                      Myvariable.hobbycontroller.length,
+                      (index) => Myskilltile(index: index),
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -80,8 +82,9 @@ class _HobbiesState extends State<Hobbies> {
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            Myvariable.hobbycontroller
-                                .add(TextEditingController());
+                            Myvariable.hobbycontroller.add(
+                              TextEditingController(),
+                            );
                           });
                         },
                         child: const Icon(Icons.add),
@@ -105,7 +108,7 @@ class _HobbiesState extends State<Hobbies> {
           child: TextFormField(
             controller: Myvariable.hobbycontroller[index],
             decoration: const InputDecoration(
-              hintText: "C Programming , Web Technical",
+              hintText: "Enter hobbies",
             ),
             onChanged: (val) {},
           ),
