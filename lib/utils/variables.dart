@@ -15,6 +15,7 @@ class Myvariable {
   static List<TextEditingController> skillcontroller = [];
   static List<TextEditingController> hobbycontroller = [];
   static List<String> achievement = [];
+  static String? declaration = "";
 
   static File? image;
 }

@@ -14,12 +14,16 @@ class _Technical_skillState extends State<Technical_skill> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     if (Myvariable.skillcontroller.isEmpty) {
       Myvariable.skillcontroller.add(TextEditingController());
       Myvariable.skillcontroller.add(TextEditingController());
     }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
