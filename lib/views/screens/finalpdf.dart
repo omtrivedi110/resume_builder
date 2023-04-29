@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:resume_builder/utils/variables.dart';
@@ -50,7 +53,7 @@ class _pdfpageState extends State<pdfpage> {
                             borderRadius: pw.BorderRadius.circular(15)),
                         child: pw.Text("${Myvariable.name}",
                             style: const pw.TextStyle(
-                              fontSize: 32,
+                              fontSize: 18,
                               color: PdfColors.black,
                             )))
                   ],
@@ -59,9 +62,15 @@ class _pdfpageState extends State<pdfpage> {
               pw.Expanded(
                 flex: 2,
                 child: pw.Column(
-                  children: [],
+                  children: [
+                    pw.Container(
+                      height: 40,
+                      width: 40,
+                      color: PdfColors.black,
+                    )
+                  ],
                 ),
-              ),
+              )
             ],
           ),
         ),
