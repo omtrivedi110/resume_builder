@@ -22,7 +22,7 @@ class _experienceState extends State<experience> {
     return Scaffold(
       appBar: AppBar(
         leading: Mybackicon(),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black45,
       ),
       body: Column(children: [
         Container(
@@ -30,7 +30,7 @@ class _experienceState extends State<experience> {
           width: s.width,
           alignment: const Alignment(0, -1),
           decoration: const BoxDecoration(
-            color: Colors.black,
+            color: Colors.black45,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),

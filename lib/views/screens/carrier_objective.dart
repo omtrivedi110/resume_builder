@@ -18,7 +18,7 @@ class _carrier_objectiveState extends State<carrier_objective> {
     Size s = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black45,
         leading: Mybackicon(),
       ),
       body: SingleChildScrollView(
@@ -32,7 +32,7 @@ class _carrier_objectiveState extends State<carrier_objective> {
                 width: s.width,
                 alignment: const Alignment(0, -1),
                 decoration: const BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.black45,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
@@ -102,13 +102,20 @@ class _carrier_objectiveState extends State<carrier_objective> {
                   child: Column(
                     children: [
                       Text(
-                        "currebt Designation(Experienced Candidiate)",
+                        "current Designation(Experienced Candidate)",
                         style: educationtitle,
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       TextFormField(
+                        validator: (val) {
+                          if (val!.isEmpty) {
+                            return "Enter The Description";
+                          } else {
+                            return null;
+                          }
+                        },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: "Software Developer",

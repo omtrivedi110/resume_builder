@@ -19,7 +19,7 @@ class _declarationState extends State<declaration> {
       appBar: AppBar(
         leading: Mybackicon(),
         elevation: 0,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black45,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),

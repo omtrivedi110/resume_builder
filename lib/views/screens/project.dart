@@ -26,7 +26,7 @@ class _projectState extends State<project> {
           "Projects",
           style: titletextstyle,
         ),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.black45,
         centerTitle: true,
       ),
       body: Padding(
@@ -79,7 +79,10 @@ class _projectState extends State<project> {
                         CheckboxListTile(
                             value: ccheckbox,
                             controlAffinity: ListTileControlAffinity.leading,
-                            title: const Text("C Programming",style: TextStyle(color: Colors.grey),),
+                            title: const Text(
+                              "C Programming",
+                              style: TextStyle(color: Colors.grey),
+                            ),
                             onChanged: (val) {
                               setState(() {
                                 ccheckbox = val!;
@@ -87,7 +90,10 @@ class _projectState extends State<project> {
                             }),
                         CheckboxListTile(
                             value: javacheckbox,
-                            title: const Text("JS Development",style: TextStyle(color: Colors.grey),),
+                            title: const Text(
+                              "JS Development",
+                              style: TextStyle(color: Colors.grey),
+                            ),
                             controlAffinity: ListTileControlAffinity.leading,
                             onChanged: (val) {
                               setState(() {
@@ -96,7 +102,10 @@ class _projectState extends State<project> {
                             }),
                         CheckboxListTile(
                             value: htmlcheckbox,
-                            title: const Text("HTML Programming",style: TextStyle(color: Colors.grey),),
+                            title: const Text(
+                              "HTML Programming",
+                              style: TextStyle(color: Colors.grey),
+                            ),
                             controlAffinity: ListTileControlAffinity.leading,
                             onChanged: (val) {
                               setState(() {
@@ -105,7 +114,10 @@ class _projectState extends State<project> {
                             }),
                         CheckboxListTile(
                             value: dartcheckbox,
-                            title: const Text("Flutter",style: TextStyle(color: Colors.grey),),
+                            title: const Text(
+                              "Flutter",
+                              style: TextStyle(color: Colors.grey),
+                            ),
                             controlAffinity: ListTileControlAffinity.leading,
                             onChanged: (val) {
                               setState(() {
@@ -179,7 +191,8 @@ class _projectState extends State<project> {
                               Align(
                                   alignment: Alignment.center,
                                   child: ElevatedButton(
-                                      onPressed: () {}, child: const Text("SAVE"))),
+                                      onPressed: () {},
+                                      child: const Text("SAVE"))),
                             ],
                           ),
                         ),

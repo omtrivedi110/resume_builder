@@ -29,7 +29,7 @@ class _personal_detailState extends State<personal_detail> {
           "Personal Detail",
           style: titletextstyle,
         ),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.black45,
         centerTitle: true,
       ),
       body: Padding(
@@ -183,7 +183,7 @@ class _personal_detailState extends State<personal_detail> {
                 Align(
                     alignment: Alignment.center,
                     child: ElevatedButton(
-              onPressed: () {}, child: const Text("SAVE"))),
+                        onPressed: () {}, child: const Text("SAVE"))),
               ],
             ),
           ),

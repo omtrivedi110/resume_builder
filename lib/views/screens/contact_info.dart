@@ -29,7 +29,7 @@ class _contact_infoState extends State<contact_info> {
           "Contact Info",
           style: titletextstyle,
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black45,
         centerTitle: true,
       ),
       body: Column(
@@ -54,7 +54,7 @@ class _contact_infoState extends State<contact_info> {
                             color: Colors.amber,
                           ),
                         ),
-                        color: Colors.black,
+                        color: Colors.black45,
                       ),
                       child: const Text(
                         "Contact Detail",
@@ -255,6 +255,9 @@ class _contact_infoState extends State<contact_info> {
                                 Expanded(
                                   flex: 11,
                                   child: TextFormField(
+                                    onSaved: (val) {
+                                      Myvariable.a2 = val!;
+                                    },
                                     decoration: const InputDecoration(
                                         hintText: "Address Line 1",
                                         border: UnderlineInputBorder()),
@@ -275,6 +278,9 @@ class _contact_infoState extends State<contact_info> {
                                 Expanded(
                                   flex: 11,
                                   child: TextFormField(
+                                    onSaved: (val) {
+                                      Myvariable.a3 = val!;
+                                    },
                                     decoration: const InputDecoration(
                                         hintText: "Address Line 2",
                                         border: UnderlineInputBorder()),

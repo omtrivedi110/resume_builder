@@ -25,7 +25,7 @@ class _educationState extends State<education> {
           "Education",
           style: titletextstyle,
         ),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.black45,
         centerTitle: true,
       ),
       body: Padding(
@@ -55,7 +55,7 @@ class _educationState extends State<education> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding:  const EdgeInsets.only(top: 10, right: 18),
+                          padding: const EdgeInsets.only(top: 10, right: 18),
                           child: TextFormField(
                             decoration: InputDecoration(
                               hintText: "B . Tech Information technology",
@@ -71,8 +71,7 @@ class _educationState extends State<education> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("School/college/institute",
-                            style: educationtitle),
+                        Text("School/college/institute", style: educationtitle),
                         Padding(
                           padding: const EdgeInsets.only(top: 10, right: 18),
                           child: Column(
@@ -81,7 +80,7 @@ class _educationState extends State<education> {
                                 decoration: InputDecoration(
                                   hintText: "Bhagawan Mahavir University",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
@@ -94,8 +93,7 @@ class _educationState extends State<education> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("Perc / CGPI",
-                            style: educationtitle ),
+                        Text("Perc / CGPI", style: educationtitle),
                         Padding(
                           padding: const EdgeInsets.only(top: 10, right: 18),
                           child: Column(
@@ -104,7 +102,7 @@ class _educationState extends State<education> {
                                 decoration: InputDecoration(
                                   hintText: "70 % OR 7.0 CGPI",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {
@@ -117,17 +115,17 @@ class _educationState extends State<education> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text("Year of Pass",
-                            style: educationtitle ),
+                        Text("Year of Pass", style: educationtitle),
                         Padding(
-                          padding: const EdgeInsets.only(top: 10, right: 18,bottom: 20),
+                          padding: const EdgeInsets.only(
+                              top: 10, right: 18, bottom: 20),
                           child: Column(
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
                                   hintText: "2019",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey.shade400),
+                                      TextStyle(color: Colors.grey.shade400),
                                   border: const OutlineInputBorder(),
                                 ),
                                 onSaved: (val) {

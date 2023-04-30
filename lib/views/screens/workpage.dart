@@ -23,7 +23,7 @@ class _workpageState extends State<workpage> {
             "Resume Workspace",
             style: titletextstyle,
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.black45,
           centerTitle: true,
           actions: [
             IconButton(
@@ -44,7 +44,7 @@ class _workpageState extends State<workpage> {
               width: s.width,
               height: s.height * 0.10,
               decoration: const BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.black45,
                   borderRadius:
                       BorderRadius.vertical(bottom: Radius.circular(35))),
               child: Text(
@@ -77,8 +77,9 @@ class _workpageState extends State<workpage> {
                                 Text(
                                   e.name,
                                   style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
                                 ),
                                 const Spacer(),
                                 IconButton(

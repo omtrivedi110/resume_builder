@@ -21,7 +21,7 @@ class _achievementState extends State<achievement> {
       appBar: AppBar(
         leading: Mybackicon(),
         elevation: 0,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black45,
       ),
       body: Column(children: [
         Container(
@@ -29,7 +29,7 @@ class _achievementState extends State<achievement> {
           width: s.width,
           alignment: const Alignment(0, -1.45),
           decoration: const BoxDecoration(
-            color: Colors.black,
+            color: Colors.black45,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),

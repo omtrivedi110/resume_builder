@@ -20,7 +20,7 @@ class _homepageState extends State<homepage> {
           "Resume Builder",
           style: titletextstyle,
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black45,
         centerTitle: true,
       ),
       body: Column(
@@ -29,9 +29,9 @@ class _homepageState extends State<homepage> {
             width: s.width,
             height: s.height * 0.12,
             decoration: const BoxDecoration(
-                color: Colors.black,
+                color: Colors.black45,
                 borderRadius:
-                BorderRadius.vertical(bottom: Radius.circular(35))),
+                    BorderRadius.vertical(bottom: Radius.circular(35))),
             child: Text(
               "\nRESUMES",
               style: titletextstyle,
@@ -67,7 +67,8 @@ class _homepageState extends State<homepage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed(routes.workpage);
-        },tooltip: "Create Resume",
+        },
+        tooltip: "Create Resume",
         hoverColor: Colors.blue,
         child: const Icon(Icons.add),
       ),
