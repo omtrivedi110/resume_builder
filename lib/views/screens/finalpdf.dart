@@ -45,17 +45,21 @@ class _pdfpageState extends State<pdfpage> {
                       ),
                     ),
                     pw.Container(
-                        height: 100,
-                        alignment: pw.Alignment.center,
-                        width: double.infinity,
-                        decoration: pw.BoxDecoration(
-                            color: PdfColors.yellow,
-                            borderRadius: pw.BorderRadius.circular(15)),
-                        child: pw.Text("${Myvariable.name}",
-                            style: const pw.TextStyle(
-                              fontSize: 18,
-                              color: PdfColors.black,
-                            )))
+                      height: 100,
+                      alignment: pw.Alignment.center,
+                      width: double.infinity,
+                      decoration: pw.BoxDecoration(
+                        color: PdfColors.yellow,
+                        borderRadius: pw.BorderRadius.circular(15),
+                      ),
+                      child: pw.Text(
+                        "${Myvariable.name}",
+                        style: const pw.TextStyle(
+                          fontSize: 18,
+                          color: PdfColors.black,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
