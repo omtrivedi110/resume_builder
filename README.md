@@ -1,5 +1,6 @@
 # resume_builder
 
+
 A new Flutter project.
 
 ## Getting Started
@@ -14,6 +15,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+https://github.com/omtrivedi110/resume_builder/assets/131134704/ccbb5c90-7ba5-4dd3-83aa-37b887925a22
+
 
 <img src="https://user-images.githubusercontent.com/131134704/233068165-c7c76c6d-cb64-4dec-afef-e8bef8617561.png" height="400"></img>
 
